@@ -1,0 +1,12 @@
+6.10.26
+
+ollama engine data:
+    - look for code from OBC in Discord
+    - uv init ollamaDemo
+    - uv run  _fileName_
+
+    - editting dependencies = "uv add __"
+    - check models = "ollama list"
+            # use one that is half your remaining memory
+            
+TODO: command line options, a good body of text that isn't necessarily completetion of a prompt
