@@ -2,7 +2,7 @@
 
 ollama engine data:
     - look for code from OBC in Discord
-    - uv init ollamaDemo
+    - be inside the correct folder
     - uv run  _fileName_
 
     - editting dependencies = "uv add __"

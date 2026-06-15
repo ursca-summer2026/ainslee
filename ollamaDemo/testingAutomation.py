@@ -1,0 +1,46 @@
+import csv
+import ollama
+
+
+def queryModel(model, prompt):
+    response = ollama.chat(
+        model=model,
+        messages=[{"role": "user", "content": prompt}]
+    )
+    text = response["message"]["content"].strip()
+    sentences = text.split(".")
+    return ". ".join(sentences[:2]).strip() + "."
+# end of queryModel()
+
+
+def runBatch(model, prompts, csv_file="results.csv"):
+    rows = []
+    rows.append({"model": model, "prompt": "Prompt", "response": "Response"})
+    for p in prompts:
+        answer = queryModel(model, p)
+        rows.append({"prompt": p, "response": answer})
+
+    with open(csv_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=["model", "prompt", "response"])
+        writer.writeheader()
+        writer.writerows(rows)
+# end of runBatch()
+
+
+def main():
+    model = input("Model name: ")
+    print("Enter prompts (blank line to finish):")
+
+    prompts = []
+    while True:
+        p = input("> ")
+        if not p.strip():
+            break
+        prompts.append(p)
+
+    runBatch(model, prompts)
+# end of main()
+
+
+if __name__ == "__main__":
+    main()
