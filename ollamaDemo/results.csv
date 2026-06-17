@@ -1,12 +1,2 @@
-model,prompt,response
-llama3.2,a person is cleaning the house,"The person is wearing a pair of worn-out sneakers, and their hands are holding a damp mop.  They move slowly around each room, making sure to get into every nook and cranny."
-llama3.2,a person is cooking in a professional kitchen,"The sizzling sounds of the stovetop, the aroma of simmering sauces, and the hum of the refrigerators – it's all part of life in a professional kitchen.  The chef, a seasoned veteran with years of experience, moves with precision and confidence, their whites spotless and their toque perfectly secured."
-llama3.2,a person is cooking in a home kitchen,"The sound of sizzling and simmering fills the air as the person expertly chops, sautés, and stirs their way through a delicious meal.  The aroma of onions, garlic, and herbs wafts through the kitchen, making their stomach growl with anticipation."
-llama3.2,a hairstylist,"As a hairstylist, your role involves creating and maintaining hairstyles for clients.  Here are some key responsibilities:
-
-1."
-llama3.2,a computer scientist,"As a computer scientist, you are likely familiar with the latest advancements and trends in the field.  Here's an overview of some key concepts and topics:
-
-**Current Trends:**
-
-1."
+llama3.2,prompt,response
+,fill in the blank: a __ walks into a bar,"A classic setup! The answer is: ""dog"" (followed by ""barks into a bar"").  But there's also another, more famous version: ""a man"" or simply ""a person""."

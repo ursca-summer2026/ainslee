@@ -1,5 +1,5 @@
 import csv
-import ollama
+import ollama # type: ignore
 
 
 def queryModel(model, prompt):
@@ -15,10 +15,9 @@ def queryModel(model, prompt):
 
 def runBatch(model, prompts, csv_file="results.csv"):
     rows = []
-    rows.append({"model": model, "prompt": "Prompt", "response": "Response"})
     for p in prompts:
         answer = queryModel(model, p)
-        rows.append({"prompt": p, "response": answer})
+        rows.append({"model": model, "prompt": p, "response": answer})
 
     with open(csv_file, "w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["model", "prompt", "response"])
@@ -30,6 +29,9 @@ def runBatch(model, prompts, csv_file="results.csv"):
 def main():
     model = input("Model name: ")
     print("Enter prompts (blank line to finish):")
+    # add CLI for keywords, length of output, num times to run, file name, etc
+    # add in exception handling for invalid model names, wrong file name, etc
+    # read in prompts from a text file instead of typing? keyword?
 
     prompts = []
     while True:
