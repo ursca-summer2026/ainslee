@@ -30,6 +30,8 @@ def main():
     model = input("Model name: ")
     print("Enter prompts (blank line to finish):")
     # add CLI for keywords, length of output, num times to run, file name, etc
+    # add in exception handling for invalid model names, wrong file name, etc
+    # read in prompts from a text file instead of typing? keyword?
 
     prompts = []
     while True:
