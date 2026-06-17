@@ -1,5 +1,5 @@
 import csv
-import ollama
+import ollama # type: ignore
 
 
 def queryModel(model, prompt):
