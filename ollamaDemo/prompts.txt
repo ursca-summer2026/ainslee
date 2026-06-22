@@ -1,0 +1,5 @@
+Briefly explain {keyword}.
+Describe how {keyword} is used in modern systems.
+Give a short overview of the challenges related to {keyword}.
+What are the main benefits of using {keyword}?
+Summarize the limitations of {keyword}.
