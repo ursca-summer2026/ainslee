@@ -32,6 +32,7 @@ def runBatch(model, keyword,prompts, csv_file="results.csv", runs=1, writeHeader
     # write the results to a CSV file
     # raise an error if the file cannot be written to
     try:
+        # mode "write" or "append" depending on whether there is a header
         mode = "w" if writeHeader else "a"
         with open(csv_file, mode, newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["keyword", "prompt", "response"])
