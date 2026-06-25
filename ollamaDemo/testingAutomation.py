@@ -23,7 +23,7 @@ def runBatch(model, prompts, csv_file="results.csv", runs=1):
     for p in prompts:
         for _ in range(runs):
             answer = queryModel(model, p)
-            rows.append({"model": model, "prompt": p, "response": answer})
+            rows.append({"model": model,  "prompt": p, "response": answer})
 
     try:
         with open(csv_file, "w", newline="", encoding="utf-8") as f:
