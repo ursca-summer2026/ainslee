@@ -10,7 +10,7 @@ def queryModel(model, prompt):
             messages=[{"role": "user", "content": prompt}]
         )
     except Exception as e:
-        raise RuntimeError(f"Model query failed: {e}")
+        raise RuntimeError(f"Model query failed. Double-check the model name and try again: {e}")
     
     text = response["message"]["content"].strip()
     sentences = text.split(".")
@@ -59,7 +59,7 @@ def main():
                 for line in f if line.strip()
                 ]
     except OSError as e:
-        print(f"File error: {e}")
+        print(f"Could not find file. Double-check the file name and try again: {e}")
         return
     
     try:
@@ -67,13 +67,13 @@ def main():
         try:
             ollama.chat(model=model, messages=[{"role": "user", "content": "test"}])
         except Exception as e:
-            print(f"Model error: {e}")
+            print(f"Model query failed. Double-check the model name and try again: {e}")
             return
 
         runBatch(model, prompts, csv_file=csvPath, runs=numRuns)
 
     except RuntimeError as e:
-        print(f"Error: {e}")
+        print(f"Runtime error: {e}")
 
 if __name__ == "__main__":
     main()
