@@ -46,81 +46,54 @@ def runBatch(model, keyword,prompts, csv_file="results.csv", runs=1, writeHeader
 
 
 def main():
-    parser = argparse.ArgumentParser(description="A sample script using argparse.")
-    parser.add_argument("-m", "--model", type=str, help="Model name to use")
-    parser.add_argument("-p", "--prompt", type=str, help="Prompt to use")
-    parser.add_argument("-k", "--keywords", type=str, help="Comma-separated keywords to use")
-    parser.add_argument("-r", "--runs", type=int, help="Number of times to run each prompt (default: 1)")
+    parser = argparse.ArgumentParser(description="A sample argparse script for running multiple keyword queries with Ollama.")
+    parser.add_argument("-m", "--model", type=str, required=True, help="Model name to use")
+    parser.add_argument("-k", "--keywords", type=str, required=True, help="Comma-separated keywords to use")
+    parser.add_argument("-r", "--runs", type=int, default=1, help="Number of times to run each prompt (default: 1)")
+    parser.add_argument("-o", "--outfile", default="results.csv", help="Output CSV filename")
+    parser.add_argument("-f", "--folder", default="output", help="Folder to save the CSV file")
+    parser.add_argument("-p", "--prompt", type=str, required=True, help="Prompt to use")
 
     # separate the user-given termincal command and store the pieces separately
-    # if a piece hasn't been input, have the user input it manually
     args = parser.parse_args()
-        
-    # model name
-    if args.model is None:
-        args.model = input("Enter model name: ").strip()
-
-    # prmpt to use
-    if args.prompt is None:
-        args.prompt = input("Enter prompt: ").strip()
-
-    # keywords to substitute into the prompt
-    if args.keywords is None:
-        args.keywords = input("Enter keywords (comma-separated): ").strip()
+    
+    # prase the keyword list
     keywords = [k.strip() for k in args.keywords.split(",") if k.strip()]
 
-    if args.runs is None:
-        args.runs = int(input("How many times should each prompt be run? "))
+    # build the path to the CSV file based on the provided folder and output filename
+    csvPath = os.path.join(args.folder, args.outfile)
 
-    # confirmation of all inputs
-    print(f"\nUsing model: {args.model}")
-    print(f"Using prompt --> {args.prompt}")
-    print(f"Using keywords: {args.keywords}")
-    print(f"Running each prompt {args.runs} times.")
-
-    exit()
-
-    '''
-    # set up CSV file output name & path
-    csvFile = input("Output CSV filename (default results.csv): ") or "results.csv"
-    CSVStoreFolder = input("Folder to save file in (default: output): ").strip() or "output"
-    csvPath = os.path.join(CSVStoreFolder, csvFile)
-    
-    # collect input on which file to read prompts from
-    promptFile = input("Enter prompt file name: ").strip()
-
-    # attempt to open said prompt file and read in the prompts as inidividual lines
+    # load in the prompts from the provided prompt file
     # replace the {keyword} placeholder in each prompt with the user-provided keyword
-    # raise an error if the file cannot be found
+    # raise an error if the file is invalid or cannot be read
     try:
-        with open(promptFile, "r", encoding="utf-8") as f:
+        with open(args.prompt, "r", encoding="utf-8") as f:
             basePrompts = [line.strip() for line in f if line.strip()]
     except OSError as e:
         print(f"Could not find file. Double-check the file name and try again: {e}")
         return
     
-    # putting everything together
+    # validate the model
     try:
-        # quick model validation (error raised if invalid model name)
-        try:
-            ollama.chat(model=model, messages=[{"role": "user", "content": "test"}])
-        except Exception as e:
-            print(f"Model query failed. Double-check the model name and try again: {e}")
-            return
+        ollama.chat(model=args.model, messages=[{"role": "user", "content": "test"}])
+    except Exception as e:
+        print(f"Model query failed. Double-check the model name and try again: {e}")
+        return
 
-        # ensure CSV storage folder exists
-        os.makedirs(CSVStoreFolder, exist_ok=True)
+    # ensure the output folder exists
+    os.makedirs(args.folder, exist_ok=True)
 
-        # process each keyword & write to a CSV file
+    # process each keyword & write to a CSV file
+    try:
         first = True
         for keyword in keywords:
             prompts = [p.replace("{keyword}", keyword) for p in basePrompts]
             runBatch(
-                model,
+                args.model,
                 keyword,
                 prompts,
                 csv_file=csvPath,
-                runs=numRuns,
+                runs=args.runs,
                 writeHeader=first
             )
             first = False
@@ -129,7 +102,7 @@ def main():
     except RuntimeError as e:
         print(f"Runtime error: {e}")
 # end of main()
-'''
+
 
 if __name__ == "__main__":
     main()
