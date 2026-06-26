@@ -1,3 +1,4 @@
+import argparse
 import csv
 import ollama # type: ignore
 import os
@@ -45,21 +46,41 @@ def runBatch(model, keyword,prompts, csv_file="results.csv", runs=1, writeHeader
 
 
 def main():
-    # collect user input for model name
-    model = input("Model name: ")
+    parser = argparse.ArgumentParser(description="A sample script using argparse.")
+    parser.add_argument("-m", "--model", type=str, help="Model name to use")
+    parser.add_argument("-p", "--prompt", type=str, help="Prompt to use")
+    parser.add_argument("-k", "--keywords", type=str, help="Comma-separated keywords to use")
+    parser.add_argument("-r", "--runs", type=int, help="Number of times to run each prompt (default: 1)")
 
-    # collect user input of (multiple) keywords and separate them
-    rawKeywords = input("Enter keywords (comma-separated): ").strip()
-    keywords = [k.strip() for k in rawKeywords.split(",") if k.strip()]
-    
-    # set up number of times to run each prompt with the keyword
-    # raise an error if the input is not a valid integer
-    try:
-        numRuns = int(input("How many times should each prompt be run? "))
-    except ValueError:
-        print("Invalid number. Defaulting to 1 run.")
-        numRuns = 1
+    # separate the user-given termincal command and store the pieces separately
+    # if a piece hasn't been input, have the user input it manually
+    args = parser.parse_args()
+        
+    # model name
+    if args.model is None:
+        args.model = input("Enter model name: ").strip()
 
+    # prmpt to use
+    if args.prompt is None:
+        args.prompt = input("Enter prompt: ").strip()
+
+    # keywords to substitute into the prompt
+    if args.keywords is None:
+        args.keywords = input("Enter keywords (comma-separated): ").strip()
+    keywords = [k.strip() for k in args.keywords.split(",") if k.strip()]
+
+    if args.runs is None:
+        args.runs = int(input("How many times should each prompt be run? "))
+
+    # confirmation of all inputs
+    print(f"\nUsing model: {args.model}")
+    print(f"Using prompt --> {args.prompt}")
+    print(f"Using keywords: {args.keywords}")
+    print(f"Running each prompt {args.runs} times.")
+
+    exit()
+
+    '''
     # set up CSV file output name & path
     csvFile = input("Output CSV filename (default results.csv): ") or "results.csv"
     CSVStoreFolder = input("Folder to save file in (default: output): ").strip() or "output"
@@ -108,7 +129,7 @@ def main():
     except RuntimeError as e:
         print(f"Runtime error: {e}")
 # end of main()
-
+'''
 
 if __name__ == "__main__":
     main()
