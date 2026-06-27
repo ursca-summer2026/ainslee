@@ -1,3 +1,4 @@
+import argparse
 import csv
 import ollama # type: ignore
 import os
@@ -21,85 +22,86 @@ def queryModel(model, prompt):
 # end of queryModel()
 
 
-def runBatch(model, keyword,prompts, csv_file="results.csv", runs=1, writeHeader=False):
+def runBatch(model, keyword, prompts, csvFile="results.csv", runs=1, writeHeader=False, startIndex=1):
     rows = []
+    currentIndex = startIndex
+
     # iterate through each prompt and run the model query the specified number of times
     for p in prompts:
         for _ in range(runs):
             answer = queryModel(model, p)
-            rows.append({"keyword": keyword, "prompt": p, "response": answer})
+            rows.append({"rowIndex": currentIndex, "keyword": keyword, "prompt": p, "response": answer})
+            currentIndex += 1
 
     # write the results to a CSV file
     # raise an error if the file cannot be written to
     try:
+        # mode "write" or "append" depending on whether there is a header
         mode = "w" if writeHeader else "a"
-        with open(csv_file, mode, newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=["keyword", "prompt", "response"])
+        with open(csvFile, mode, newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=["rowIndex", "keyword", "prompt", "response"])
             if writeHeader:
                 writer.writeheader()
             writer.writerows(rows)
     except OSError as e:
-        raise RuntimeError(f"Could not write to file '{csv_file}': {e}")
+        raise RuntimeError(f"Could not write to file '{csvFile}': {e}")
+    
+    return currentIndex
 # end of runBatch()
 
 
 def main():
-    # collect user input for model name
-    model = input("Model name: ")
+    parser = argparse.ArgumentParser(description="A sample argparse script for running multiple keyword queries with Ollama.")
+    parser.add_argument("-m", "--model", type=str, required=True, help="Model name to use")
+    parser.add_argument("-k", "--keywords", type=str, required=True, help="Comma-separated keywords to use")
+    parser.add_argument("-r", "--runs", type=int, default=1, help="Number of times to run each prompt (default: 1)")
+    parser.add_argument("-o", "--outfile", default="results.csv", help="Output CSV filename")
+    parser.add_argument("-f", "--folder", default="output", help="Folder to save the CSV file")
+    parser.add_argument("-p", "--prompt", type=str, required=True, help="Prompt to use")
 
-    # collect user input of (multiple) keywords and separate them
-    rawKeywords = input("Enter keywords (comma-separated): ").strip()
-    keywords = [k.strip() for k in rawKeywords.split(",") if k.strip()]
+    # separate the user-given termincal command and store the pieces separately
+    args = parser.parse_args()
     
-    # set up number of times to run each prompt with the keyword
-    # raise an error if the input is not a valid integer
-    try:
-        numRuns = int(input("How many times should each prompt be run? "))
-    except ValueError:
-        print("Invalid number. Defaulting to 1 run.")
-        numRuns = 1
+    # prase the keyword list
+    keywords = [k.strip() for k in args.keywords.split(",") if k.strip()]
 
-    # set up CSV file output name & path
-    csvFile = input("Output CSV filename (default results.csv): ") or "results.csv"
-    CSVStoreFolder = input("Folder to save file in (default: output): ").strip() or "output"
-    csvPath = os.path.join(CSVStoreFolder, csvFile)
-    
-    # collect input on which file to read prompts from
-    promptFile = input("Enter prompt file name: ").strip()
+    # build the path to the CSV file based on the provided folder and output filename
+    csvPath = os.path.join(args.folder, args.outfile)
 
-    # attempt to open said prompt file and read in the prompts as inidividual lines
+    # load in the prompts from the provided prompt file
     # replace the {keyword} placeholder in each prompt with the user-provided keyword
-    # raise an error if the file cannot be found
+    # raise an error if the file is invalid or cannot be read
     try:
-        with open(promptFile, "r", encoding="utf-8") as f:
+        with open(args.prompt, "r", encoding="utf-8") as f:
             basePrompts = [line.strip() for line in f if line.strip()]
     except OSError as e:
         print(f"Could not find file. Double-check the file name and try again: {e}")
         return
     
-    # putting everything together
+    # validate the model
     try:
-        # quick model validation (error raised if invalid model name)
-        try:
-            ollama.chat(model=model, messages=[{"role": "user", "content": "test"}])
-        except Exception as e:
-            print(f"Model query failed. Double-check the model name and try again: {e}")
-            return
+        ollama.chat(model=args.model, messages=[{"role": "user", "content": "test"}])
+    except Exception as e:
+        print(f"Model query failed. Double-check the model name and try again: {e}")
+        return
 
-        # ensure CSV storage folder exists
-        os.makedirs(CSVStoreFolder, exist_ok=True)
+    # ensure the output folder exists
+    os.makedirs(args.folder, exist_ok=True)
 
-        # process each keyword & write to a CSV file
+    # process each keyword & write to a CSV file
+    try:
         first = True
+        rowIndex = 1
         for keyword in keywords:
             prompts = [p.replace("{keyword}", keyword) for p in basePrompts]
-            runBatch(
-                model,
+            rowIndex = runBatch(
+                args.model,
                 keyword,
                 prompts,
-                csv_file=csvPath,
-                runs=numRuns,
-                writeHeader=first
+                csvFile=csvPath,
+                runs=args.runs,
+                writeHeader=first,
+                startIndex=rowIndex
             )
             first = False
 
