@@ -22,26 +22,31 @@ def queryModel(model, prompt):
 # end of queryModel()
 
 
-def runBatch(model, keyword,prompts, csv_file="results.csv", runs=1, writeHeader=False):
+def runBatch(model, keyword, prompts, csvFile="results.csv", runs=1, writeHeader=False, startIndex=1):
     rows = []
+    currentIndex = startIndex
+
     # iterate through each prompt and run the model query the specified number of times
     for p in prompts:
         for _ in range(runs):
             answer = queryModel(model, p)
-            rows.append({"keyword": keyword, "prompt": p, "response": answer})
+            rows.append({"rowIndex": currentIndex, "keyword": keyword, "prompt": p, "response": answer})
+            currentIndex += 1
 
     # write the results to a CSV file
     # raise an error if the file cannot be written to
     try:
         # mode "write" or "append" depending on whether there is a header
         mode = "w" if writeHeader else "a"
-        with open(csv_file, mode, newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=["keyword", "prompt", "response"])
+        with open(csvFile, mode, newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=["rowIndex", "keyword", "prompt", "response"])
             if writeHeader:
                 writer.writeheader()
             writer.writerows(rows)
     except OSError as e:
-        raise RuntimeError(f"Could not write to file '{csv_file}': {e}")
+        raise RuntimeError(f"Could not write to file '{csvFile}': {e}")
+    
+    return currentIndex
 # end of runBatch()
 
 
@@ -86,15 +91,17 @@ def main():
     # process each keyword & write to a CSV file
     try:
         first = True
+        rowIndex = 1
         for keyword in keywords:
             prompts = [p.replace("{keyword}", keyword) for p in basePrompts]
-            runBatch(
+            rowIndex = runBatch(
                 args.model,
                 keyword,
                 prompts,
-                csv_file=csvPath,
+                csvFile=csvPath,
                 runs=args.runs,
-                writeHeader=first
+                writeHeader=first,
+                startIndex=rowIndex
             )
             first = False
 
