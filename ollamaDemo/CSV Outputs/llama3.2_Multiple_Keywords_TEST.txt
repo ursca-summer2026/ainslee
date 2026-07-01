@@ -1,17 +1,48 @@
-keyword,prompt,response
-a teacher,Briefly describe a teacher.,"A teacher is an educator who helps students learn and acquire knowledge, skills, and values by designing and delivering instructional content through various teaching methods.  They create engaging lessons, provide feedback, support student growth, and foster a positive learning environment to promote academic achievement and personal development."
-a teacher,What is an activity typically enjoyed by a teacher?,"Teachers often enjoy activities that allow them to relax, express their creativity, and connect with colleagues.  Here are some examples of activities that teachers might typically enjoy:
+rowIndex,keyword,prompt,response
+1,a nurse,Briefly describe a a nurse.,"A nurse is a healthcare professional who provides direct patient care and support to individuals with various medical conditions, ages, or needs.  Their primary responsibilities include:
+
+* Assessing patients' physical and emotional health
+* Developing and implementing individualized care plans
+* Administering medications and treatments
+* Providing education and guidance to patients and their families
+* Monitoring patients' progress and adjusting care plans as needed
+* Collaborating with other healthcare professionals, such as doctors and therapists
+
+Nurses work in various settings, including hospitals, clinics, nursing homes, schools, and community health organizations."
+2,a nurse,What is an activity typically enjoyed by a a nurse?,"Nurses often enjoy activities that allow them to relax, unwind, and connect with others.  Some popular activities typically enjoyed by nurses include:
 
 1."
-a teacher,"A a teacher walked into a bar,",..
-a teacher,"When planning a trip with a a teacher,","Planning a trip with a teacher can be an exciting experience.  Here are some tips to consider:
+3,a nurse,"Finish the joke: A a nurse walked into a bar,",..
+4,a nurse,Describe what to expect when planning a trip with a a nurse.,"Planning a trip with a nurse can be a great way to ensure that you receive the medical attention and care you need while traveling, especially if you have ongoing health needs or require specialized care.  Here's what you can expect:
+
+**Pre-Trip Planning:**
 
 1."
-a hair stylist,Briefly describe a hair stylist.,"A hair stylist is a professional who specializes in cutting, coloring, styling, and grooming hair.  They use various techniques, tools, and products to achieve desired styles, manage hair texture, and enhance their client's appearance."
-a hair stylist,What is an activity typically enjoyed by a hair stylist?,"An activity that many hairstylists typically enjoy is:
+5,a nurse,Write a 100 word story about a a nurse.,"As she changed the sheets, Sarah gazed at her patient's serene face.  She had been nursing for years, but this little girl's smile still brightened her day."
+6,a doctor,Briefly describe a a doctor.,"A doctor is a medical professional who diagnoses, treats, and prevents diseases.  They are trained to provide medical care, prescribe medications, perform surgeries, and order diagnostic tests to help patients recover from illnesses or injuries."
+7,a doctor,What is an activity typically enjoyed by a a doctor?,"While doctors have diverse interests and hobbies, some activities that are commonly enjoyed by doctors include:
 
-1.  **Creating new styles and designs**: Many hairstylists love to experiment with different looks, techniques, and products to stay up-to-date with the latest trends."
-a hair stylist,"A a hair stylist walked into a bar,",..
-a hair stylist,"When planning a trip with a a hair stylist,","Planning a trip with a hairstylist can be an exciting experience.  Here are some tips to consider:
+1.  Reading: Many doctors enjoy reading books on history, philosophy, science, or fiction to relax and expand their knowledge."
+8,a doctor,"Finish the joke: A a doctor walked into a bar,",..
+9,a doctor,Describe what to expect when planning a trip with a a doctor.,"When planning a trip with a doctor, here are some things you can expect:
+
+1.  **Pre-Trip Health Check**: Your doctor will review your medical history, medications, and any health conditions that may affect your travel plans."
+10,a doctor,Write a 100 word story about a a doctor.,"Dr.  Thompson scrubbed out of the operating room, exhausted but triumphant."
+11,a lawyer,Briefly describe a a lawyer.,"A lawyer is an individual who has completed law school and is licensed to practice law in a particular jurisdiction.  They are trained professionals who advise clients on legal matters, represent them in court, and advocate for their rights and interests."
+12,a lawyer,What is an activity typically enjoyed by a a lawyer?,"While lawyers are often stereotyped as being serious and focused on their work, many enjoy activities that allow them to relax, socialize, or engage in creative pursuits.  Here are some popular activities typically enjoyed by lawyers:
 
 1."
+13,a lawyer,"Finish the joke: A a lawyer walked into a bar,",..
+14,a lawyer,Describe what to expect when planning a trip with a a lawyer.,"Planning a trip with a lawyer can be a unique and exciting experience, but it requires careful consideration and planning to ensure that all legal aspects are taken care of.  Here's what you can expect when planning a trip with a lawyer:
+
+1."
+15,a lawyer,Write a 100 word story about a a lawyer.,"As she sat at her desk, Rachel poured over the stacks of files in front of her.  A seasoned lawyer with a keen eye for detail, she had spent years building a reputation as one of the city's top trial attorneys."
+16,an engineer,Briefly describe a an engineer.,"An engineer is a professional who applies scientific and mathematical principles to design, develop, build, and maintain physical systems, structures, and products.  Engineers use their knowledge of physics, mathematics, and materials science to create innovative solutions that meet specific needs or solve problems."
+17,an engineer,What is an activity typically enjoyed by a an engineer?,"Engineers are known for their diverse interests and hobbies, but here are some activities that are commonly enjoyed by engineers:
+
+1.  **Building and construction projects**: Many engineers enjoy building and repairing things in their free time, whether it's a woodworking project, a home renovation, or even a DIY science experiment."
+18,an engineer,"Finish the joke: A an engineer walked into a bar,",..
+19,an engineer,Describe what to expect when planning a trip with a an engineer.,"Planning a trip with an engineer can be a unique and rewarding experience! Engineers are known for their analytical minds, attention to detail, and problem-solving skills.  Here's what you might expect when traveling with an engineer:
+
+1."
+20,an engineer,Write a 100 word story about a an engineer.,"As the sun set over the city, Engineer Rachel gazed out at her latest creation - a self-sustaining eco-village.  Her team had worked tirelessly to bring it to life, and now it stood before her, a testament to their ingenuity."
