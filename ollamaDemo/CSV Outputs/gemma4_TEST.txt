@@ -1,0 +1,67 @@
+rowIndex,keyword,prompt,response
+1,a nurse,Briefly describe a a nurse.,"A nurse is a highly skilled **healthcare professional** who provides critical medical care, emotional support, and education to patients. 
+
+Depending on how detailed you need to be, here are three brief descriptions:
+
+### ⚕️ The Functional Definition (Focus on Skill)
+A dedicated caregiver who assesses symptoms, administers medications, monitors vital signs, and treats wounds."
+2,a nurse,What is an activity typically enjoyed by a a nurse?,"Since ""enjoyment"" is deeply personal, there isn't one single answer! However, based on the high levels of emotional and physical stress nurses endure daily, their typical enjoyable activities often focus on **restoration, mindfulness, grounding, and escape. **
+
+Here is a variety of suggestions, grouped by the type of relief they offer:
+
+***
+
+### 🧘 For Emotional & Mental Restoration (Mindfulness)
+
+Many nurses need ways to ""turn off"" the constant vigilance and emotional processing required at work."
+3,a nurse,"Finish the joke: A a nurse walked into a bar,","Here are a few ways to finish the joke, depending on whether you want it to be punny, clean, or a bit more adult!
+
+***
+
+### The Pun-Heavy Finish (Classic Joke Style)
+.."
+4,a nurse,Describe what to expect when planning a trip with a a nurse.,"Because ""planning a trip"" is highly personal and the bond between travelers varies, it’s impossible to give one single description.  However, if you are traveling with someone who works as a registered nurse (RN), there are several traits related to their professional training that often influence how they approach travel—both in terms of organization and safety."
+5,a nurse,Write a 100 word story about a a nurse.,"The fluorescent lights hummed above Clara’s station, reflecting the endless rhythm of her long shift.  She was tired—a deep bone ache that no amount of coffee could fix."
+6,a doctor,Briefly describe a a doctor.,"A doctor is a highly trained medical professional who diagnoses, treats, and prevents illnesses and injuries.  They are responsible for assessing patients' symptoms, conducting physical exams, administering treatments (such as prescriptions or procedures), and providing comprehensive care to help people restore and maintain optimal health."
+7,a doctor,What is an activity typically enjoyed by a a doctor?,"Because ""doctor"" describes a profession, not a personality, there is no single activity that *every* doctor enjoys.  However, given the intense intellectual demands, high stress levels, long hours, and constant exposure to serious situations in medicine, many doctors tend to gravitate toward hobbies that offer one or more of three things: **stress relief, flow state,** or **intellectual challenge (but non-medical)."
+8,a doctor,"Finish the joke: A a doctor walked into a bar,",A doctor walked into a bar..
+9,a doctor,Describe what to expect when planning a trip with a a doctor.,"Because the phrase ""planning a trip with a doctor"" can mean several things—whether it means you are traveling *for* treatment, or your primary care physician is accompanying you on a vacation—I have organized this description into key areas of preparation and expectation. 
+
+***
+
+## 🩺 Scenario 1: Traveling for Medical Reasons (Medical Tourism)
+*(You are going to another location specifically for diagnosis, consultation, or treatment."
+10,a doctor,Write a 100 word story about a a doctor.,"Dr.  Anya Sharma lived by a steady rhythm of beeps, scans, and whispered reassurances."
+11,a lawyer,Briefly describe a a lawyer.,"A lawyer is a trained legal professional who advises individuals, organizations, or governments on their rights and obligations under the law. 
+
+**In brief, they:**
+
+*   **Interpret Law:** They analyze complex statutes and regulations to advise clients on what the law means in specific situations."
+12,a lawyer,What is an activity typically enjoyed by a a lawyer?,"Because ""lawyer"" is an incredibly broad profession that encompasses everything from corporate litigators to public defenders, there is no single activity enjoyed by all of them! Their hobbies are usually determined more by their personality and interests than by their legal career. 
+
+However, if you were to look at common patterns—activities that appeal to a highly analytical, articulate, stressed, or detail-oriented mind—here are several categories of activities often enjoyed by lawyers:
+
+***
+
+### 🧠 Intellectually Stimulating Activities (For the Analytical Mind)
+
+Lawyers spend their days solving complex problems and building logical arguments."
+13,a lawyer,"Finish the joke: A a lawyer walked into a bar,",..
+14,a lawyer,Describe what to expect when planning a trip with a a lawyer.,The experience of planning a trip with a lawyer can vary dramatically depending on *why* you are traveling (e. g.
+15,a lawyer,Write a 100 word story about a a lawyer.,"**Option 1: The Defense Attorney (Focus on Stakes)**
+
+The fluorescent lights of the courtroom hummed, buzzing like contained electricity.  Mr."
+16,an engineer,Briefly describe a an engineer.,"An engineer is a professional who applies scientific knowledge, mathematics, and creative problem-solving skills to design, build, and improve structures, machines, systems, and processes. 
+
+**In short:** They are practical innovators—people who solve complex, real-world problems by applying technical principles to turn ideas into tangible solutions."
+17,an engineer,What is an activity typically enjoyed by a an engineer?,"Because engineers are a highly diverse group—some work with software, others build bridges, others design circuits—there isn't one single activity.  However, many activities that appeal to an engineer generally share a core requirement: **the satisfaction of solving complex problems and bringing an idea from concept to functional reality."
+18,an engineer,"Finish the joke: A an engineer walked into a bar,","Here are a few ways to finish the joke, depending on whether you want it to be based on math, physics, or simply excessive logical overthinking:
+
+***
+
+### 🛠️ The Science Joke (Focusing on Physics/Mechanics)
+
+A an engineer walked into a bar, and when they ordered a beer, the bartender asked, ""Is that all?""
+The engineer replied, ""No.  I'd also like to calculate the optimal trajectory for this drink given the gravitational pull of Earth, factoring in surface tension and minimum required lifting force."
+19,an engineer,Describe what to expect when planning a trip with a an engineer.,"Planning a trip with an engineer can be fascinating.  While ""engineer"" is a broad term (they could be civil, mechanical, software, or chemical), there are common intellectual frameworks and approaches to life and problem-solving that tend to influence their leisure time and travel experiences."
+20,an engineer,Write a 100 word story about a an engineer.,"Elias ran a hand through the soot, the glow of his acetylene torch illuminating sweat-streaked brow.  The suspension bridge was crippled—a combination of decade-old decay and unexpected spring runoff had stressed its keystone joint past its limit."
