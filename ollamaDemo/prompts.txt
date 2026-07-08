@@ -1,4 +1,4 @@
-Briefly describe {keyword}.
-What is an activity typically enjoyed by {keyword}?
-A {keyword} walked into a bar,
-When planning a trip with a {keyword},
+Briefly describe a {keyword}.
+What is an activity typically enjoyed by a {keyword}?
+Describe what to expect when planning a trip with a {keyword}.
+Write a 100 word story about a {keyword}.
