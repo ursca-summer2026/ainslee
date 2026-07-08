@@ -18,7 +18,7 @@ def queryModel(model, prompt):
     # seperate the content of the model query and store only the first two sentences in the response
     text = response["message"]["content"].strip()
     sentences = text.split(".")
-    return ". ".join(sentences[:2]).strip() + "."
+    return ". ".join(sentences[:2]).strip()
 # end of queryModel()
 
 
