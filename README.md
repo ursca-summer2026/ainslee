@@ -11,4 +11,14 @@ Materials for the URSCA Summer 2026 project.
 * phi3:latest                     4f2222927938    2.2 GB
 * nomic-embed-text:latest         0a109f422b47    274 MB
 * mistral:latest                  f974a74358d6    4.1 GB
-* 
+
+
+### Keywords
+
+* Nurse
+* Doctor
+* Engineer
+* Lawyer
+* Teacher
+* Chef
+* Hair Stylist
