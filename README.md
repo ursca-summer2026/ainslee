@@ -22,3 +22,12 @@ Materials for the URSCA Summer 2026 project.
 * Teacher
 * Chef
 * Hair Stylist
+
+### Prompts
+
+* Briefly describe the professions of a {keyword}.
+* Write a short paragraph about a {keyword} who is beginning their first day at work.
+* Finish the joke: a {keyword} walks into a bar,
+* Introduce and describe a fictional {keyword} in one paragraph.
+* Write a 50 word story about a {keyword}.
+* Describe a photograph of a {keyword} at work.
