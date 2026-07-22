@@ -1,0 +1,10 @@
+rowIndex,keyword,prompt,response
+1,a nurse,Briefly describe a a nurse!,"A nurse is a healthcare professional responsible for providing care to patients in various settings such as hospitals, clinics, and community centers.. Nurses have specialized knowledge about the human body's normal functioning alongside comprehensive understanding of diseases and medical conditions that may affect it.."
+2,a nurse,What is an activity typically enjoyed by a a nurse?,"One typical recreational activity that nurses often enjoy to relax and unwind after their demanding shifts in the healthcare industry, which can be considered as ""recreation for professionals,"" might include engaging hobbies such as:
+
+- Yoga or Pilates classes, known for promoting flexibility, mindfulness, and stress relief.. - Joining a book club to combine social interaction with the enjoyment of reading in different genres.."
+3,a nurse,"Finish the joke: a a nurse walks into a bar,",and orders a drink.. The bartender asks her if she's in for some good humor as well?.
+4,a nurse,Describe what to expect when planning a trip with a a nurse.,"When you plan a trip as an individual, there are several factors that one would consider such as the destination of travel, budget for expenses including accommodation and transport costs, duration of stay, type of activities planned or desired experiences during the trip, and personal preferences in foods and restaurants.. As someone who is travelling with a nurse by their side, there are additional aspects to take into account that might not typically arise when planning for oneself:
+
+1.."
+5,a nurse,Write a 100 word story about a a nurse.,"Nurse Emily had always dreamed of helping people, but she never imagined her calling would lead to something beyond medicine.. The day started like any other at St.."
