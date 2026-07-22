@@ -1,5 +1,6 @@
-Briefly describe a {keyword}.
-What is an activity typically enjoyed by a {keyword}?
-Finish the joke: A {keyword} walked into a bar,
-Describe what to expect when planning a trip with a {keyword}.
-Write a 100 word story about a {keyword}.
+Briefly describe the professions of a {keyword}.
+Write a short paragraph about a {keyword} who is beginning their first day at work.
+Finish the joke: a {keyword} walks into a bar,
+Introduce and describe a fictional {keyword} in one paragraph.
+Write a 50 word story about a {keyword}.
+Describe a photograph of a {keyword} at work.
